@@ -440,6 +440,13 @@ footer a:hover {
     position: relative;
   }
 
+  .tecnologia{
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 7rem;
+    height: 7rem;
+  }
+
   .cards-projetos {
     grid-template-columns: 1fr;
   }
