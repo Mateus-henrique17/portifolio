@@ -36,6 +36,21 @@ export const technologiesData = [
     alt: 'logo HTML',
     hidden: false,
   },
+
+  {
+    name: 'NodeJS',
+    src: 'img/Tecnolgias/icons8-nodejs-100.png',
+    alt: 'logo HTML',
+    hidden: true,
+  },
+
+  {
+    name: 'VS Code',
+    src: 'img/Tecnolgias/VScode.png',
+    alt: 'logo VS code',
+    hidden: true,
+  },
+
   {
     name: 'Git',
     src: 'img/Tecnolgias/Git.png',
@@ -94,7 +109,7 @@ export const projectsData = [
       'Aplicação web desenvolvida em React para exploração de personagens. O projeto realiza requisições assíncronas à API pública, implementa gerenciamento dinâmico de estados e apresenta uma interface responsiva.',
     defaultSrc: 'img/Cards/card-rick-and-morty/rick-morty.jpeg',
     alt: 'Imagem do site Rick and Morty Explorer',
-    stack: ['React', 'JS', 'Rest Api', 'CSS'],
+    stack: ['JS', 'Rest Api', 'CSS'],
     repoUrl: 'https://github.com/Mateus-henrique17/Rick-and-Morty-explorer',
     siteUrl: 'https://mateus-henrique17.github.io/Rick-and-Morty-explorer/',
   },

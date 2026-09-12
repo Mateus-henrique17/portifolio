@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap");
 
 :root {
   --bg: #08090f;
   --header: rgba(8, 9, 15, 0.85);
   --font: "Orbitron", sans-serif;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff007f;
+
   --text: #f0f3f8;
   --card: #111424;
   --section: #0d101f;
   --border: rgba(0, 240, 255, 0.15);
-  --accent: #00f0ff;
+  --accent: var(--neon-cyan);
   --bg-btn-theme: #1a1d36;
-  --ball-color: #00f0ff;
+  --ball-color: var(--neon-cyan);
   --error-color: #ff0055;
   --success-color: #00ff66;
-  --neon-cyan: #00f0ff;
-  --neon-pink: #ff007f;
-  --cyber-gradient: linear-gradient(45deg, var(--neon-cyan) 0%, var(--neon-pink) 100%);
+  --cyber-gradient: linear-gradient(
+    45deg,
+    var(--neon-cyan) 0%,
+    var(--neon-pink) 100%
+  );
 }
 
 [data-theme="light"] {
@@ -26,22 +31,22 @@
   --card: #ffffff;
   --section: #f1f5f9;
   --border: #b9bfc9;
-  --accent: #ff007f;
+  --accent: var(--neon-pink);
   --bg-btn-theme: #d1d5db;
-  --ball-color: #ff007f;
+  --ball-color: var(--neon-pink);
   --error-color: #ef4444;
   --success-color: #22c55e;
-  --cyber-gradient: linear-gradient(45deg, #ff007f 0%, #7000ff 100%);
+  --cyber-gradient: linear-gradient(45deg, var(--neon-pink) 0%, #7000ff 100%);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -50,9 +55,11 @@ body {
   background-color: var(--bg);
   color: var(--text);
   padding-top: 80px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 section {
@@ -62,7 +69,9 @@ section {
   border-radius: 8px;
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 section h2 {

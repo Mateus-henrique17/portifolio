@@ -2,7 +2,7 @@
   border-top: 1px solid var(--border-color, rgba(0, 240, 255, 0.15));
   padding: 2rem;
   margin-top: 4rem;
-  background: var(--card-bg, rgba(0, 0, 0, 0.2));
+  background: var(--card-bg);
 }
 
 .rodapeConteudo {
@@ -27,7 +27,7 @@
 }
 
 .redesSociais a {
-  color: var(--accent, #00f0ff);
+  color: var(--accent);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
