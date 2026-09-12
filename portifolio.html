@@ -1,0 +1,432 @@
+<!doctype html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="http:"></script>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script defer="" src="js/index.js"></script>
+    <title>Mateus Henrique | Dev Front-End</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="titulo">Mateus <span class="dev">Dev</span></h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#tecnologias">Tecnologias</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          class="menu-toggle"
+        >
+          ☰
+        </button>
+        <div class="btn-theme">
+          <input class="chk-theme" id="chk-theme" type="checkbox" />
+          <label class="label-theme" for="chk-theme">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+            <div class="ball-theme"></div>
+          </label>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="perfil" id="inicio">
+        <img
+          alt="Foto de Mateus Henrique,
+        desenvolvedor front-end"
+          class="foto"
+          loading="lazy"
+          src="img/Perfil/foto-perfil.jpg"
+        />
+        <h2>Mateus Henrique</h2>
+        <p class="dev">Desenvolvedor Front-End</p>
+        <p class="hero-descricao">
+          Desenvolvo interfaces web modernas, responsivas e focadas na
+          experiência do usuário utilizando React, JavaScript (ES6+) e consumo
+          de APIs REST.
+        </p>
+        <div class="hero-botoes">
+          <a class="btn" href="#projetos">Ver projetos</a>
+          <a class="btn" href="#contato">Contato</a>
+        </div>
+      </section>
+      <section class="sobre" id="sobre">
+        <h2>Sobre mim</h2>
+        <p>
+          Sou Desenvolvedor Front-End com foco na criação de aplicações web
+          modernas utilizando React e JavaScript. Também trabalho com consumo de
+          APIs REST, Git e GitHub, tudo para desenvolvimento de interfaces
+          eficientes, responsivas e bem estruturadas.
+        </p>
+        <p>
+          Possuo domínio de HTML semântico e CSS moderno, aplicando boas
+          práticas de acessibilidade, responsividade e organização de código.
+          Busco desenvolver interfaces intuitivas e de fácil manutenção,
+          utilizando componentização e padrões amplamente adotados no
+          desenvolvimento front-end atual.
+        </p>
+        <p>
+          Desenvolvo projetos práticos para aprimorar continuamente minhas
+          habilidades técnicas, trabalhando com integração de APIs, manipulação
+          de dados e implementação de funcionalidades interativas. Tenho como
+          objetivo criar soluções que unam experiência do usuário, qualidade de
+          código e boas práticas de desenvolvimento.
+        </p>
+      </section>
+      <section id="tecnologias">
+        <h2>Minhas tecnologias</h2>
+        <div class="tecnologias">
+          <div class="tecnologia">
+            <img
+              alt="logo React"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/React.png"
+            />
+            <p>React</p>
+          </div>
+          <div class="tecnologia">
+            <img
+              alt="logo API REST"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/api-rest.png"
+            />
+            <p>Consumo de APIs</p>
+          </div>
+          <div class="tecnologia">
+            <img
+              alt="logo CSS Modules"
+              class="logo-tecnologia logo-darkTheme"
+              loading="lazy"
+              src="img/Tecnolgias/css-modules-logo.png"
+            />
+            <p>CSS Modules</p>
+          </div>
+          <div class="tecnologia">
+            <img
+              alt="logo JavaScript"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/JavaScript.png"
+            />
+            <p>JS</p>
+          </div>
+          
+          <div class="tecnologia">
+            <img
+              alt="logo CSS"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/CSS3.png"
+            />
+            <p>CSS</p>
+          </div>
+          <div class="tecnologia">
+            <img
+              alt="logo HTML"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/HTML5.png"
+            />
+            <p>HTML</p>
+          </div>
+          
+          <div class="tecnologia hidden">
+            <img
+              alt="logo Git"
+              class="logo-tecnologia"
+              loading="lazy"
+              src="img/Tecnolgias/Git.png"
+            />
+            <p>Git</p>
+          </div>
+          <div class="tecnologia hidden">
+            <img
+              alt="logo GitHub"
+              class="logo-tecnologia logo-darkTheme"
+              loading="lazy"
+              src="img/Tecnolgias/GitHub.png"
+            />
+            <p>GitHub</p>
+          </div>
+        </div>
+        <div class="btn-contains">
+          <button class="btn-hidden" id="hiddenBtn">Ver mais</button>
+        </div>
+      </section>
+      <section class="projetos" id="projetos">
+        <h2>Meus projetos</h2>
+        <div class="cards-projetos">
+          <div class="card">
+            <img
+              alt="Imagem do site Portifólio pessoal"
+              class="img-card"
+              data-src-dark="img/Cards/card-portifolio/card-portifolio-dark.webp"
+              data-src-light="img/Cards/card-portifolio/card-portifolio-light.webp"
+              loading="lazy"
+              src="img/Cards/cards-portifolio/card-portifolio-dark.jpg"
+            />
+            <div class="descricao">
+              <h3>Portifólio pessoal</h3>
+              <p>
+                Site desenvolvido para apresentação de projetos e informações
+                profissionais. Inclui alternância de tema (dark/light) com
+                persistência local e formulário de contato com validação e envio
+                de mensagens por meio do EmailJS.
+              </p>
+              <div class="stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+              </div>
+              <div class="botoes">
+                <a
+                  class="btn"
+                  href="https://github.com/Mateus-henrique17/portifolio"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Repositório</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="Imagem do projeto To Do List"
+              class="img-card"
+              loading="lazy"
+              src="img/Cards/card-to-do-list/lista-de-tarefas-para-mudar-sua-vida.webp"
+            />
+            <div class="descricao">
+              <h3>To Do List</h3>
+              <p>
+                Aplicação de gerenciamento de tarefas desenvolvida com React,
+                com persistência de dados via localStorage. Permite adicionar,
+                concluir e remover tarefas, mantendo o estado salvo no
+                navegador.
+              </p>
+              <div class="stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+                <span>React</span>
+              </div>
+              <div class="botoes">
+                <a
+                  class="btn"
+                  href="https://mateus-henrique17.github.io/todolist/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Site</a
+                >
+                <a
+                  class="btn"
+                  href="https://github.com/Mateus-henrique17/todolist"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Repositório</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="Imagem do projeto Personal Finance Tracker"
+              class="img-card"
+              loading="lazy"
+              src="img/Cards/card-finance-app/card-finance-app.jpeg"
+            />
+            <div class="descricao">
+              <h3>Personal Finance Tracker</h3>
+              <p>
+                Aplicação de gerenciamento financeiro desenvolvida em JavaScript
+                puro, com persistência de dados via localStorage. Permite
+                cadastrar, editar e remover transações com cálculo automático de
+                saldo em tempo real.
+              </p>
+              <div class="stack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+              </div>
+              <div class="botoes">
+                <a
+                  class="btn"
+                  href="https://mateus-henrique17.github.io/Personal-Finance-Tracker/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Site</a
+                >
+                <a
+                  class="btn"
+                  href="https://github.com/Mateus-henrique17/Personal-Finance-Tracker"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Repositório</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              alt="Imagem do site Rick and Morty Explorer"
+              class="img-card"
+              loading="lazy"
+              src="img/Cards/card-rick-and-morty/rick-morty.jpeg"
+            />
+            <div class="descricao">
+              <h3>Rick and Morty Explorer</h3>
+              <p>
+                Aplicação web desenvolvida em React para exploração de
+                personagens. O projeto realiza requisições assíncronas à API
+                pública, implementa gerenciamento dinâmico de estados e
+                apresenta uma interface responsiva.
+              </p>
+              <div class="stack">
+                <span>React</span>
+                <span>JS</span>
+                <span>Rest Api</span>
+                <span>CSS</span>
+              </div>
+              <div class="botoes">
+                <a
+                  class="btn"
+                  href="https://mateus-henrique17.github.io/Rick-and-Morty-explorer/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Site</a
+                >
+                <a
+                  class="btn"
+                  href="https://github.com/Mateus-henrique17/Rick-and-Morty-explorer"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >Ver Repositório</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section" id="contato">
+        <h2>Fale comigo</h2>
+
+        <form
+          action="#"
+          class="contact-form"
+          id="contactForm"
+          method="post"
+          novalidate=""
+        >
+          <div class="form-group">
+            <label for="fullName">Nome completo</label>
+            <input
+              autocomplete="name"
+              class="form-input"
+              id="fullName"
+              name="fullName"
+              placeholder="Digite seu nome"
+              required=""
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <label for="emailAddress">E-mail</label>
+            <input
+              autocomplete="email"
+              class="form-input"
+              id="emailAddress"
+              name="emailAddress"
+              placeholder="exemplo@email.com"
+              required=""
+              type="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="projectType">Assunto</label>
+            <select
+              class="form-select"
+              id="projectType"
+              name="projectType"
+              required=""
+            >
+              <option disabled="" hidden="" selected="" value="">
+                Selecione um assunto
+              </option>
+              <option value="website">Criação de Website</option>
+              <option value="landing-page">Landing Page</option>
+              <option value="web-application">Aplicação Web</option>
+              <option value="other">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea
+              class="form-textarea"
+              id="message"
+              name="message"
+              placeholder="Descreva brevemente o projeto ou sua dúvida..."
+              required=""
+              rows="5"
+            ></textarea>
+          </div>
+          <button class="form-submit-button" type="submit">
+            Enviar mensagem
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="mailto:1205mateus@gmail.com"> 1205mateus@gmail.com </a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/5535984311537"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/Mateus-henrique17"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/mateus-henrique-83b164375/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <span>© 2026 Mateus Henrique. Todos os direitos reservados.</span>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </body>
+</html>

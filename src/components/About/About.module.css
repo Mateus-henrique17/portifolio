@@ -1,0 +1,11 @@
+.sobre p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.sobre p:last-child {
+  margin-bottom: 0;
+}

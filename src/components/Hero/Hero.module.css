@@ -1,0 +1,84 @@
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem 3rem 2rem;
+  gap: 1.2rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.perfil h2 {
+  font-family: var(--font);
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  background-image: var(--cyber-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.3));
+  margin-bottom: 0;
+}
+
+.perfil .dev {
+  font-family: var(--font);
+  font-size: 1.3rem;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+  -webkit-text-fill-color: initial;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  transition: transform 0.5s ease, border-color 0.3s ease;
+}
+
+.foto:hover {
+  transform: scale(1.03) rotate(2deg);
+  border-color: #ff007f;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+}
+
+.heroDescricao {
+  max-width: 600px;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.heroBotoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+ .btn{
+  composes: btn from global;
+}
+
+@media (max-width: 800px) {
+  .perfil h2 {
+    font-size: 2.2rem;
+  }
+
+  .heroBotoes {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .heroBotoes .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
