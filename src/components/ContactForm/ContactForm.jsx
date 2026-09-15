@@ -1,20 +1,21 @@
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import styles from './ContactForm.module.css'
-
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import styles from "./ContactForm.module.css";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    nome: '',
-    email: '',
-    mensagem: '',
+    nome: "",
+    email: "",
+    assunto: "",
+    mensagem: "",
   });
 
   const [statusMessage, setStatusMessage] = useState({
-    text: '',
-    type: '', // 'success' | 'error' | ''
+    text: "",
+    type: "",
   });
 
   const [loading, setLoading] = useState(false);
+  const [dropdownAberto, setDropdownAberto] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,51 +25,50 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validação básica
-    if (!formData.nome.trim() || !formData.email.trim() || !formData.mensagem.trim()) {
+    if (
+      !formData.nome.trim() ||
+      !formData.email.trim() ||
+      !formData.assunto ||
+      !formData.mensagem.trim()
+    ) {
       setStatusMessage({
-        text: 'Por favor, preencha todos os campos.',
-        type: 'error',
+        text: "Por favor, preencha todos os campos.",
+        type: "error",
       });
       return;
     }
 
     setLoading(true);
-    setStatusMessage({ text: 'Enviando mensagem...', type: '' });
+    setStatusMessage({ text: "Enviando mensagem...", type: "" });
 
-    // Configuração do EmailJS
-    // Substitua os parâmetros abaixo pelas suas credenciais do EmailJS:
-    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', templateParams, 'PUBLIC_KEY')
     const templateParams = {
       from_name: formData.nome,
       reply_to: formData.email,
+      project_type: formData.assunto,
       message: formData.mensagem,
     };
 
     emailjs
-      .send(
-        'service_2mlaesi',   // Substitua pelo seu Service ID
-        'template_3f6cgg8',  // Substitua pelo seu Template ID
-        templateParams,
-        '3H0sFLYcrWNClVOPn'    // Substitua pela sua Public Key
-      )
+      .send("service_2mlaesi", "template_3f6cgg8", templateParams, {
+        publicKey: "3H0sFLYcrWNClVOPn",
+      })
       .then(
         () => {
           setStatusMessage({
-            text: 'Mensagem enviada com sucesso! Em breve entrarei em contato.',
-            type: 'success',
+            text: "Mensagem enviada com sucesso! Em breve entrarei em contato.",
+            type: "success",
           });
-          setFormData({ nome: '', email: '', mensagem: '' });
+          setFormData({ nome: "", email: "", assunto: "", mensagem: "" });
           setLoading(false);
         },
         (error) => {
-          console.error('Erro EmailJS:', error);
+          console.error("Erro EmailJS:", error);
           setStatusMessage({
-            text: 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.',
-            type: 'error',
+            text: "Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.",
+            type: "error",
           });
           setLoading(false);
-        }
+        },
       );
   };
 
@@ -105,6 +105,94 @@ export default function ContactForm() {
             required
           />
         </div>
+        <div className={styles.campo}>
+          <label htmlFor="assunto-toggle">Assunto:</label>
+
+          <button
+            id="assunto-toggle"
+            type="button"
+            className={styles.dropdownTrigger}
+            onClick={() => setDropdownAberto(!dropdownAberto)}
+          >
+            <span>
+              {formData.assunto
+                ? formData.assunto === "Vaga"
+                  ? "Contratação (CLT)"
+                  : formData.assunto === "Freela"
+                  ? "Projetos Freelance"
+                  : formData.assunto === "Parcerias_duvidas"
+                  ? "Parcerias ou dúvidas"
+                  : formData.assunto
+                : "Selecione o assunto:"}
+            </span>
+            <div className="chevrons">
+              <i
+                className={`fa-solid ${dropdownAberto ? "fa-chevron-up" : "fa-chevron-down"}`}
+              ></i>
+            </div>
+          </button>
+
+          {dropdownAberto && (
+            <ul className={styles.options} id="options">
+              <li className={styles.option}>
+                <input
+                  type="radio"
+                  name="assunto"
+                  id="assunto-vaga"
+                  value="Vaga"
+                  checked={formData.assunto === "Vaga"}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setDropdownAberto(false);
+                  }}
+                />
+                <label htmlFor="assunto-vaga">Contratação (CLT)</label>
+              </li>
+              <li className={styles.option}>
+                <input
+                  type="radio"
+                  name="assunto"
+                  id="assunto-freela"
+                  value="Freela"
+                  checked={formData.assunto === "Freela"}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setDropdownAberto(false);
+                  }}
+                />
+                <label htmlFor="assunto-freela">Projetos Freelance</label>
+              </li>
+              <li className={styles.option}>
+                <input
+                  type="radio"
+                  name="assunto"
+                  id="assunto-parcerias_duvidas"
+                  value="Parcerias_duvidas"
+                  checked={formData.assunto === "Parcerias_duvidas"}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setDropdownAberto(false);
+                  }}
+                />
+                <label htmlFor="assunto-parcerias_duvidas">Parcerias ou dúvidas</label>
+              </li>
+              <li className={styles.option}>
+                <input
+                  type="radio"
+                  name="assunto"
+                  id="assunto-outros"
+                  value="Outros"
+                  checked={formData.assunto === "Outros"}
+                  onChange={(e) => {
+                    handleChange(e);
+                    setDropdownAberto(false);
+                  }}
+                />
+                <label htmlFor="assunto-outros">Outros</label>
+              </li>
+            </ul>
+          )}
+        </div>
 
         <div className={styles.campo}>
           <label htmlFor="mensagem">Mensagem</label>
@@ -120,13 +208,15 @@ export default function ContactForm() {
         </div>
 
         {statusMessage.text && (
-          <p className={`${styles.statusMessage} ${statusMessage.type}`}>
+          <p
+            className={`${styles.statusMessage} ${styles[statusMessage.type] || ""}`}
+          >
             {statusMessage.text}
           </p>
         )}
 
         <button type="submit" className={styles.btn} disabled={loading}>
-          {loading ? 'Enviando...' : 'Enviar mensagem'}
+          {loading ? "Enviando..." : "Enviar mensagem"}
         </button>
       </form>
     </section>
