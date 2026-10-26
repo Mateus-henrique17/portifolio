@@ -1,5 +1,5 @@
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import styles from "./ContactForm.module.css";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -112,6 +112,8 @@ export default function ContactForm() {
             id="assunto-toggle"
             type="button"
             className={styles.dropdownTrigger}
+            aria-expanded={dropdownAberto}
+            aria-controls="assunto-options"
             onClick={() => setDropdownAberto(!dropdownAberto)}
           >
             <span>
@@ -119,10 +121,10 @@ export default function ContactForm() {
                 ? formData.assunto === "Vaga"
                   ? "Contratação (CLT)"
                   : formData.assunto === "Freela"
-                  ? "Projetos Freelance"
-                  : formData.assunto === "Parcerias_duvidas"
-                  ? "Parcerias ou dúvidas"
-                  : formData.assunto
+                    ? "Projetos Freelance"
+                    : formData.assunto === "Parcerias_duvidas"
+                      ? "Parcerias ou dúvidas"
+                      : formData.assunto
                 : "Selecione o assunto:"}
             </span>
             <div className="chevrons">
@@ -133,7 +135,7 @@ export default function ContactForm() {
           </button>
 
           {dropdownAberto && (
-            <ul className={styles.options} id="options">
+            <ul className={styles.options} id="assunto-options">
               <li className={styles.option}>
                 <input
                   type="radio"
@@ -174,7 +176,9 @@ export default function ContactForm() {
                     setDropdownAberto(false);
                   }}
                 />
-                <label htmlFor="assunto-parcerias_duvidas">Parcerias ou dúvidas</label>
+                <label htmlFor="assunto-parcerias_duvidas">
+                  Parcerias ou dúvidas
+                </label>
               </li>
               <li className={styles.option}>
                 <input
@@ -210,6 +214,7 @@ export default function ContactForm() {
         {statusMessage.text && (
           <p
             className={`${styles.statusMessage} ${styles[statusMessage.type] || ""}`}
+            role={statusMessage.type === "error" ? "alert" : "status"}
           >
             {statusMessage.text}
           </p>

@@ -15,8 +15,11 @@ export default function Header({ theme, toggleTheme }) {
   return (
     <header className={styles.header}>
       <h1 className={styles.titulo}>Mateus Dev</h1>
-      <nav>
-        <ul className={`${styles.menu} ${isMenuOpen ? styles.show : ""}`}>
+      <nav aria-label="Navegação principal">
+        <ul
+          id="primary-navigation"
+          className={`${styles.menu} ${isMenuOpen ? styles.show : ""}`}
+        >
           <li>
             <a href="#inicio" onClick={closeMenu}>
               Início
@@ -46,11 +49,13 @@ export default function Header({ theme, toggleTheme }) {
 
         <button
           className={styles.menuToggle}
-          aria-label="Abrir menu"
+          type="button"
+          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
           onClick={toggleMenu}
         >
-          ☰
+          <span aria-hidden="true">☰</span>
         </button>
 
         <div className={styles.btnTheme}>
@@ -58,13 +63,20 @@ export default function Header({ theme, toggleTheme }) {
             type="checkbox"
             id="chk-theme"
             className={styles.chkTheme}
+            aria-label="Tema claro"
             checked={theme === "light"}
             onChange={toggleTheme}
           />
           <label className={styles.labelTheme} htmlFor="chk-theme">
-            <i className={`fa-solid fa-moon ${styles.iconMoon}`}></i>
-            <i className={`fa-solid fa-sun ${styles.iconSun}`}></i>
-            <div className={styles.ballTheme}></div>
+            <i
+              aria-hidden="true"
+              className={`fa-solid fa-moon ${styles.iconMoon}`}
+            ></i>
+            <i
+              aria-hidden="true"
+              className={`fa-solid fa-sun ${styles.iconSun}`}
+            ></i>
+            <div aria-hidden="true" className={styles.ballTheme}></div>
           </label>
         </div>
       </nav>
